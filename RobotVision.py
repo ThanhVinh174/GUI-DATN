@@ -4,7 +4,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 import cv2
 import sys
-
+#NNNNNNNNNNN
 class UI_camera(QMainWindow):
     def __init__(self):
         super(UI_camera, self).__init__()
