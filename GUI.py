@@ -5,6 +5,7 @@ from PyQt5.QtCore import Qt
 import sys
 import keyboard
 from RobotVision import UI_camera
+from DrawTheVelocityGraph import GraphUI
 
 class UI(QMainWindow):
     S = False
@@ -19,6 +20,7 @@ class UI(QMainWindow):
         self.left.clicked.connect(self.clickedLeft)
         self.right.clicked.connect(self.clickedRight) 
         self.open_camera_button.clicked.connect(self.openCamera)
+        self.draw_graph_button.clicked.connect(self.openGraph)
 
     def clickedUp(self):
         self.leftvel.setText("Pushed UP Button")
@@ -30,6 +32,9 @@ class UI(QMainWindow):
         self.leftvel.setText("Pushed RIGHT Button")
     def openCamera(self):
         self.ui = UI_camera()
+        self.ui.show()
+    def openGraph(self):
+        self.ui = GraphUI()
         self.ui.show()
     def start(self):
         UI.S = ~UI.S
